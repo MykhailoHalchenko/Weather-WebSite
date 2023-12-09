@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 20px;
+        background-color: #f4f4f4;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      form {
+        margin-top: 20px;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      input {
+        padding: 5px;
+        margin-right: 10px;
+      }
+
+      button {
+        padding: 5px 10px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      h2 {
+        margin-top: 20px;
+        color: #333;
+      }
+
+      p {
+        margin: 10px 0;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Weather App</h1>
+    <form method="post">
+      <label for="city">Enter city:</label>
+      <input type="text" name="city" id="city" required />
+      <button type="submit">Get Weather</button>
+    </form>
+
+    {% if city %}
+    <h2>Weather in {{ city }}</h2>
+    <p>Temperature: {{ temperature }}°C</p>
+    <p>Wind Speed: {{ wind_speed }} m/s</p>
+    <p>Description: {{ description }}</p>
+    {% endif %}
+  </body>
+</html>
